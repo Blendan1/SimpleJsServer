@@ -1,0 +1,17 @@
+{
+  "name": "simple-js-server",
+  "version": "1.0.0",
+  "description": "A simple server to serve mulltiple js files as one in a single endpoint",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "sjss": "./index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.8.10"
+  }
+}
