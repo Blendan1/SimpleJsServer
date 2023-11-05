@@ -1,10 +1,12 @@
 {
   "name": "simple-js-server",
   "version": "1.0.0",
-  "description": "A simple server to serve mulltiple js files as one in a single endpoint",
+  "description": "A simple server to serve multiple js files as one in a single endpoint",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc",
+    "pretest": "tsc",
+    "test": "node index.js",
     "postinstall": "tsc"
   },
   "bin": {
@@ -13,9 +15,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^20.8.10"
-  },
-  "dependencies": {
-    "tsc": "^2.0.4"
+    "@types/node": "^20.8.10",
+    "tsc": "^2.0.4",
+    "typescript": "^5.2.2"
   }
 }

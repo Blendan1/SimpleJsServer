@@ -4,15 +4,16 @@ import * as http from "http";
 import * as fs from "fs";
 import * as path from "path";
 
-const basePath = process.argv[0];
-const port = process.argv[1] || 3000;
+const [,,...args] = process.argv;
+const basePath = args[0];
+const port = args[1] || 3000;
 
 if(!basePath?.trim()) {
-    throw new Error("no base path specified");
+    throw "no base path specified";
 }
 
 function getJsFile() {
-    let file = ";"
+    let file = "";
     const dir = fs.readdirSync(basePath);
     dir.forEach(f => {
         if (f.match(/\.js$/)) {
@@ -25,7 +26,6 @@ function getJsFile() {
 
 const server = http.createServer((rew, res) => {
     res.write(getJsFile());
-    res.setDefaultEncoding('utf8');
     res.end();
 });
 
