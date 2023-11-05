@@ -7,12 +7,17 @@
     "tsc": "tsc",
     "pretest": "tsc",
     "test": "node index.js",
-    "postinstall": "tsc"
+    "postinstall": "tsc",
+    "build": "tsc && npm publish ./"
   },
   "bin": {
     "sjss": "./index.js"
   },
-  "author": "",
+  "author": "Blendan1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Blendan1/SimpleJsServer.git"
+  },
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.8.10",
