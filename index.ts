@@ -4,12 +4,18 @@ import * as http from "http";
 import * as fs from "fs";
 import * as path from "path";
 
-const [,,...args] = process.argv;
+const [, , ...args] = process.argv;
 const basePath = args[0];
 const port = args[1] || 3000;
 
-if(!basePath?.trim()) {
-    throw "no base path specified";
+if (!basePath?.trim()) {
+    const pjson = require('./package.json');
+    console.log(
+`command: sjss <path_to_js_dir> [port]
+    
+    version: ${pjson.version}
+`);
+    process.exit(0);
 }
 
 function getJsFile() {

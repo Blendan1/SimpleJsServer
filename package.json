@@ -1,13 +1,13 @@
 {
   "name": "simple-js-server",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A simple server to serve multiple js files as one in a single endpoint",
   "main": "index.js",
   "scripts": {
-    "tsc": "tsc",
+    "tsc": "node ./node_modules/typescript/bin/tsc",
     "pretest": "tsc",
     "test": "node index.js",
-    "build": "tsc && npm publish ./"
+    "build": "npm run tsc && npm publish ./"
   },
   "bin": {
     "sjss": "./index.js"
